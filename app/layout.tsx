@@ -1,8 +1,7 @@
-import { ClerkProvider } from '@clerk/nextjs';
-import React from 'react';
-
-// eslint-disable-next-line camelcase
-import { Inter, Space_Grotesk} from 'next/font/google';
+/* eslint-disable camelcase */
+import React from 'react'
+import { ClerkProvider } from '@clerk/nextjs'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import type { Metadata } from 'next';
 
 import './globals.css';
@@ -21,10 +20,10 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'DevOverflow',
-  description: 'A community-driven platform for developers to ask questions and share their knowledge. Get help, collaborate with developers from around the world. Explore topics in web development, mobile development, machine learning, and more.',
+  title: 'DevFlow',
+  description: 'A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate with developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.',
   icons: {
-    icon: "/assets/images/site-logo.svg"
+    icon: '/assets/images/site-logo.svg'
   }
 }
 
@@ -34,13 +33,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+      <html lang="en">
         <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
           <ClerkProvider
             appearance={{
               elements: {
-                formButtonPrimary:'primary-gradient',
-                footerActionLink: 'primary-text-gradient hover:text-primary-500',
+                formButtonPrimary: 'primary-gradient',
+                footerActionLink: 'primary-text-gradient hover:text-primary-500'
               }
             }}
           >
