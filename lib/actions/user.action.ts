@@ -14,6 +14,7 @@ import {
 import { revalidatePath } from "next/cache";
 import Question from "@/database/question.model";
 import Tag from "@/database/tag.model";
+import Answer from "@/database/answer.model";
 
 export async function getUserById(params: any) {
   try {
@@ -82,6 +83,7 @@ export async function deleteUser(params: DeleteUserParams) {
     await Question.deleteMany({ author: user._id });
 
     // TODO: delete user answers, comments, etc.
+    // await Answer.deleteMany({ author: user._id });
 
     const deletedUser = await User.findByIdAndDelete(user._id);
 
